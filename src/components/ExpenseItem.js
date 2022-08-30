@@ -1,16 +1,13 @@
+import ExpenseDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 
-const ExpenseItem = () => {
-  const expenseDate = new Date(2022, 3, 28);
-  const expenseTitle = "Car insurance";
-  const expenseAmount = 294.74;
-
+const ExpenseItem = ({ title, amount, date }) => {
   return (
     <div className="expense-item">
-      <div>{expenseDate.toDateString()}</div>
+      <ExpenseDate date={date} />
       <div className="expense-item__description">
-        <h2>{expenseTitle}</h2>
-        <div className="expense-item__price">$ {expenseAmount}</div>
+        <h2>{title}</h2>
+        <div className="expense-item__price">$ {amount}</div>
       </div>
     </div>
   );
